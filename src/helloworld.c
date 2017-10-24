@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include "factorial.h"
 
-/* This is a C-style comment, which has two ends
+/* This is a C-style comment, which has two ends for spanning multiple lines
+ * The * characters without the / are for guiding the eye - they have no effect
+ *
  * Above are #include statements for the "preprocessor".
  * They insert the code contained in the indicated files at the indicated line
  * so that the C "compiler" can find it and convert it into machine code
@@ -10,7 +12,7 @@
  * The quotes "" indicate the file is local, relative to the current directory
  */
 
-// This is a C++-style comment, which only has the starting end
+// This is a C++-style comment, which only has one side, //, for a single line
 // They are useful for quick documentation
 
 
@@ -37,11 +39,16 @@ int main(int argc, char **argv) {
 
     /* Note on printf:
      *      %s : placeholder of type string
+     *      The following arguments are substituted for the placeholder.
+     *      Other placeholder letters indicate different types:
+     *        %d : int 
+     *        %f : float
+     *        etc.
      */
     printf("This is %s, running in the program %s!\n", string, program);
+    /* Reminder: \n is a "newline" character inside a string */
     
-    /* Call the function defined below
-     */
+    /* Call the function defined below */
     print_factorial();
 
     /* Programs should return 0 unless an error happens */
@@ -52,6 +59,13 @@ void print_factorial() {
     /* void : no return type
      *
      * Functions that only perform input/output (I/O) are type void
+     * These functions produce "side effects" rather than return values
+     * Properly, we could call them procedures, rather than functions
+     *
+     * Stylistically, it is a very good idea for functions to either
+     * return values (like true functions) or perform side effects
+     * (like procedures). Mixing behaviors causes bugs that are difficult
+     * to identify and fix.
      *
      * Note that the function "factorial" used here has its type
      * specified in the "header" file "factorial.h" included above
@@ -61,7 +75,9 @@ void print_factorial() {
      * that contains a definition for "factorial" that matches the type
      * specified in "factorial.h"
      *
-     * Note on printf:
+     * See the Makefile for more info on how the compilation process works
+     *
+     * Reminder on printf:
      *      %d : placeholder of type int
      *
      */

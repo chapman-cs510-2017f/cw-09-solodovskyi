@@ -6,6 +6,6 @@ int factorial(int);
 
 /* Type signature for function "print_factorial"
  *   Has zero arguments
- *   Returns nothing, which of type void
+ *   Returns nothing, which is of type void
  */
 void print_factorial();
